@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import MenuBar from "./MenuBar";
 import Navbar from "./Navbar";
 import SessionProvider from "./SessionProvider";
+import ForYouFeed from "./ForYouFeed";
 
 export default async function Layout({
   children,
