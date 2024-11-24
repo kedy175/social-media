@@ -26,9 +26,10 @@ model User {
   googleId     String?   @unique
   avatarUrl    String?
   bio          String?
-  sessions      Session[]
+  sessions     Session[]
 
   createdAt DateTime @default(now())
+  Post      Post[]
 
   @@map("users")
 }
@@ -37,9 +38,18 @@ model Session {
   id        String   @id
   userId    String
   expiresAt DateTime
-  User      User     @relation(fields: [userId], references: [id], onDelete: Cascade) //delets session when delete user
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade) //delets session when delete user
 
   @@map("sessions")
 }
 
+model Post {
+  id      String @id @default(cuid())
+  content String
+  userId  String
+  user    User   @relation(fields: [userId], references: [id], onDelete: Cascade) //delets session when delete user
 
+  createdAt DateTime @default(now())
+
+  @@map("posts")
+}
