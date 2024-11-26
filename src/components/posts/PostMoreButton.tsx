@@ -36,7 +36,7 @@ export default function PostMoreButton({
               Delete
             </span>
           </DropdownMenuItem>
-        </DropdownMenuContent>     
+        </DropdownMenuContent>
       </DropdownMenu>
       <DeletePostDialog
         post={post}

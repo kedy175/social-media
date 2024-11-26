@@ -1,8 +1,7 @@
 "use client";
 
-import { signUpSchema, SignUpValues } from "@/lib/validation";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
+import LoadingButton from "@/components/LoadingButton";
+import { PasswordInput } from "@/components/PasswordInput";
 import {
   Form,
   FormControl,
@@ -12,11 +11,11 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import { signUpSchema, SignUpValues } from "@/lib/validation";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { useState, useTransition } from "react";
+import { useForm } from "react-hook-form";
 import { signUp } from "./actions";
-import LoadingButton from "@/components/LoadingButton";
-import { PasswordInput } from "@/components/PasswordInput";
 
 export default function SignUpForm() {
   const [error, setError] = useState<string>();
@@ -33,13 +32,10 @@ export default function SignUpForm() {
   });
 
   async function onSubmit(values: SignUpValues) {
-    //
     setError(undefined);
     startTransition(async () => {
       const { error } = await signUp(values);
-      if (error) {
-        setError(error);
-      }
+      if (error) setError(error);
     });
   }
 
@@ -80,16 +76,13 @@ export default function SignUpForm() {
             <FormItem>
               <FormLabel>Password</FormLabel>
               <FormControl>
-                <PasswordInput placeholder="Password" type="password" {...field} />
+                <PasswordInput placeholder="Password" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
-        <LoadingButton
-        loading = {isPending}
-        type="submit" 
-        className="w-full">
+        <LoadingButton loading={isPending} type="submit" className="w-full">
           Create account
         </LoadingButton>
       </form>

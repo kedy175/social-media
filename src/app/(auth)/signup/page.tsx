@@ -5,7 +5,7 @@ import Link from "next/link";
 import SignUpForm from "./SignUpForm";
 
 export const metadata: Metadata = {
-  title: "Sign Up | bugbook",
+  title: "Sign Up",
 };
 
 export default function Page() {

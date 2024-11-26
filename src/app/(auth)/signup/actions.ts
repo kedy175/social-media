@@ -10,7 +10,7 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
 export async function signUp(
-  credentials: SignUpValues
+  credentials: SignUpValues,
 ): Promise<{ error: string }> {
   try {
     const { username, email, password } = signUpSchema.parse(credentials);
@@ -35,7 +35,7 @@ export async function signUp(
 
     if (existingUsername) {
       return {
-        error: "Username already taken.",
+        error: "Username already taken",
       };
     }
 
@@ -50,7 +50,7 @@ export async function signUp(
 
     if (existingEmail) {
       return {
-        error: "Email already taken.",
+        error: "Email already taken",
       };
     }
 
@@ -66,11 +66,12 @@ export async function signUp(
 
     const session = await lucia.createSession(userId, {});
     const sessionCookie = lucia.createSessionCookie(session.id);
-    (await cookies()).set(
+    cookies().set(
       sessionCookie.name,
       sessionCookie.value,
-      sessionCookie.attributes
+      sessionCookie.attributes,
     );
+
     return redirect("/");
   } catch (error) {
     if (isRedirectError(error)) throw error;

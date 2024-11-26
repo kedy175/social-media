@@ -12,12 +12,14 @@ export async function logout() {
   }
 
   await lucia.invalidateSession(session.id);
+
   const sessionCookie = lucia.createBlankSessionCookie();
 
-  (await cookies()).set(
+  cookies().set(
     sessionCookie.name,
     sessionCookie.value,
-    sessionCookie.attributes
+    sessionCookie.attributes,
   );
+
   return redirect("/login");
 }

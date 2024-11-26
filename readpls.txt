@@ -10,3 +10,5 @@ Shadcn components add command:
 npx --legacy-peer-deps shadcn@latest add button dialog dropdown-menu form input label skeleton tabs textarea toast tooltip
 
 used zod for validation
+
+curl -X POST -F "file=@avatar-placeholder.png" \ "http://localhost:3000/api/uploadthing?actionType=upload&slug=avatar" 

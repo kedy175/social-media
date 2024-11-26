@@ -1,8 +1,8 @@
 "use client";
 
+import { SearchIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { Input } from "./ui/input";
-import { SearchIcon } from "lucide-react";
 
 export default function SearchField() {
   const router = useRouter();

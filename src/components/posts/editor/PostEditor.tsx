@@ -1,19 +1,19 @@
 "use client";
 
 import { useSession } from "@/app/(main)/SessionProvider";
-import { Button } from "@/components/ui/button";
+import LoadingButton from "@/components/LoadingButton";
 import UserAvatar from "@/components/UserAvatar";
 import Placeholder from "@tiptap/extension-placeholder";
 import { EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
-import { submitPost } from "./actions";
-import "./styles.css";
 import { useSubmitPostMutation } from "./mutations";
-import LoadingButton from "@/components/LoadingButton";
+import "./styles.css";
 
 export default function PostEditor() {
   const { user } = useSession();
+
   const mutation = useSubmitPostMutation();
+
   const editor = useEditor({
     extensions: [
       StarterKit.configure({
@@ -32,12 +32,11 @@ export default function PostEditor() {
     }) || "";
 
   function onSubmit() {
-    mutation.mutate(input,{
+    mutation.mutate(input, {
       onSuccess: () => {
         editor?.commands.clearContent();
-      }
+      },
     });
-    editor?.commands.clearContent();
   }
 
   return (
@@ -51,8 +50,8 @@ export default function PostEditor() {
       </div>
       <div className="flex justify-end">
         <LoadingButton
-          loading = {mutation.isPending}
           onClick={onSubmit}
+          loading={mutation.isPending}
           disabled={!input.trim()}
           className="min-w-20"
         >

@@ -3,6 +3,7 @@
 import { logout } from "@/app/(auth)/actions";
 import { useSession } from "@/app/(main)/SessionProvider";
 import { cn } from "@/lib/utils";
+import { useQueryClient } from "@tanstack/react-query";
 import { Check, LogOutIcon, Monitor, Moon, Sun, UserIcon } from "lucide-react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
@@ -19,7 +20,6 @@ import {
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
 import UserAvatar from "./UserAvatar";
-import { QueryClient, useQuery, useQueryClient } from "@tanstack/react-query";
 
 interface UserButtonProps {
   className?: string;
@@ -80,7 +80,8 @@ export default function UserButton({ className }: UserButtonProps) {
             logout();
           }}
         >
-          <LogOutIcon className="mr-2 size-4" />q Logout
+          <LogOutIcon className="mr-2 size-4" />
+          Logout
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
