@@ -1,27 +1,24 @@
 import { validateRequest } from "@/auth";
 import streamServerClient from "@/lib/stream";
+import { MessageCountInfo } from "@/lib/types";
 
 export async function GET() {
   try {
     const { user } = await validateRequest();
 
-    console.log("Calling get-token for user: ", user?.id);
-
     if (!user) {
       return Response.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    const expirationTime = Math.floor(Date.now() / 1000) + 60 * 60;
-
-    const issuedAt = Math.floor(Date.now() / 1000) - 60;
-
-    const token = streamServerClient.createToken(
+    const { total_unread_count } = await streamServerClient.getUnreadCount(
       user.id,
-      expirationTime,
-      issuedAt,
     );
 
-    return Response.json({ token });
+    const data: MessageCountInfo = {
+      unreadCount: total_unread_count,
+    };
+
+    return Response.json(data);
   } catch (error) {
     console.error(error);
     return Response.json({ error: "Internal server error" }, { status: 500 });

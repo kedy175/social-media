@@ -6,7 +6,7 @@ import { getPostDataInclude } from "@/lib/types";
 import { createPostSchema } from "@/lib/validation";
 
 export async function submitPost(input: {
-  content: string,
+  content: string;
   mediaIds: string[];
 }) {
   const { user } = await validateRequest();
@@ -20,8 +20,8 @@ export async function submitPost(input: {
       content,
       userId: user.id,
       attachments: {
-        connect: mediaIds.map(id => ({ id })),
-      }
+        connect: mediaIds.map((id) => ({ id })),
+      },
     },
     include: getPostDataInclude(user.id),
   });
