@@ -70,3 +70,10 @@ To add ShadCN components, use the following command:
 ```bash
 npx --legacy-peer-deps shadcn@latest add button dialog dropdown-menu form input label skeleton tabs textarea toast tooltip
 ```
+
+## Future Works
+
+- **Mention Other Users**: Implement a feature to allow users to mention other users in posts and comments using an `@` symbol.
+- **Instagram-Like Stories**: Create a feature for users to upload short stories that disappear after 24 hours.
+- **Attachments in Comments**: Enable users to upload and post attachments (images, videos, documents) within the comments section.
+
