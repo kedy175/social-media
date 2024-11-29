@@ -45,6 +45,7 @@ This web application is built by following this [`tutorial`](https://www.youtube
 ### Technologies Used
 
 - **Framework:** Next.js
+- **Database:** PostgresSQL
 - **Node Version:** 20.15.0
 - **Languages:** TypeScript, JavaScript
 - **Styling:** CSS
