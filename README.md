@@ -35,7 +35,7 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
-This web application is build by following this [`tutorial`](https://www.youtube.com/watch?v=TyV12oBDsYI) from [`Coding in Flow`](https://www.youtube.com/@codinginflow).
+This web application is built by following this [`tutorial`](https://www.youtube.com/watch?v=TyV12oBDsYI) from [`Coding in Flow`](https://www.youtube.com/@codinginflow).
 
 Techonologies used 
 nextjs
