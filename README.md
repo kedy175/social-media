@@ -37,7 +37,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 This web application is built by following this [`tutorial`](https://www.youtube.com/watch?v=TyV12oBDsYI) from [`Coding in Flow`](https://www.youtube.com/@codinginflow).
 
-Techonologies used 
+## Techonologies usesd
 nextjs
 node version 20.15.0
 typescript
