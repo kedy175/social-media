@@ -1,3 +1,6 @@
+
+# Next.js Project
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/create-next-app).
 
 ## Getting Started
@@ -24,10 +27,10 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 
 To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Next.js Documentation](https://nextjs.org/docs) - Learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - An interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - Your feedback and contributions are welcome!
 
 ## Deploy on Vercel
 
@@ -35,20 +38,35 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
+## About This Project
+
 This web application is built by following this [`tutorial`](https://www.youtube.com/watch?v=TyV12oBDsYI) from [`Coding in Flow`](https://www.youtube.com/@codinginflow).
 
-## Techonologies usesd
-nextjs,
-node version 20.15.0,
-typescript,
-javascript,
-css
+### Technologies Used
 
-Dependencies install command:
+- **Framework:** Next.js
+- **Node Version:** 20.15.0
+- **Languages:** TypeScript, JavaScript
+- **Styling:** CSS
+
+### Installation
+
+#### Dependencies:
+
+```bash
 npm i lucia @lucia-auth/adapter-prisma prisma @prisma/client @tanstack/react-query @tanstack/react-query-devtools @tiptap/react @tiptap/starter-kit @tiptap/extension-placeholder @tiptap/pm uploadthing @uploadthing/react arctic date-fns ky next-themes react-cropper react-image-file-resizer react-intersection-observer react-linkify-it stream-chat stream-chat-react --legacy-peer-deps
+```
 
-Dev dependencies install command:
+#### Development Dependencies:
+
+```bash
 npm i -D prettier eslint-config-prettier prettier-plugin-tailwindcss --legacy-peer-deps
+```
 
-Shadcn components add command:
+### ShadCN Components
+
+To add ShadCN components, use the following command:
+
+```bash
 npx --legacy-peer-deps shadcn@latest add button dialog dropdown-menu form input label skeleton tabs textarea toast tooltip
+```
